@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- FirmwareForge Ltd. brand icon: anvil forming an F, with circuit traces -->
+  <g>
+    <!-- Orange anvil face -->
+    <path fill="#F0751D" d="M112 82 H408 L364 148 H150 Z"/>
+    <!-- Anvil body forming an F -->
+    <path fill="#1A222C" d="M184 162 H344 C398 166 440 184 456 208 C464 220 460 234 446 238 C412 258 378 266 344 268 H290 C276 268 266 278 266 292 V370 C266 396 300 412 336 428 C344 432 348 436 348 442 H170 C170 435 175 430 184 426 Z"/>
+    <!-- Circuit traces -->
+    <g stroke="#F0751D" stroke-width="16" fill="none" stroke-linecap="round">
+      <path d="M186 202 H128"/>
+      <circle cx="104" cy="202" r="13"/>
+      <path d="M186 250 H94"/>
+      <circle cx="70" cy="250" r="13"/>
+      <path d="M186 298 H128"/>
+      <circle cx="104" cy="298" r="13"/>
+    </g>
+  </g>
+</svg>

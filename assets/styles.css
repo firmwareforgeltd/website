@@ -1,0 +1,203 @@
+/* FirmwareForge Ltd — site styles */
+
+:root {
+  --orange: #F0751D;
+  --orange-hover: #FF8A33;
+  --bg: #10161D;
+  --bg-panel: #1A222C;
+  --bg-card: #161E27;
+  --line: #26313D;
+  --text: #F2F5F7;
+  --text-dim: #A7B2BE;
+  --max: 1160px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, svg { max-width: 100%; height: auto; }
+
+.container { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+.container.narrow { max-width: 760px; }
+.center { text-align: center; }
+
+.accent { color: var(--orange); }
+
+a { color: var(--orange); text-decoration: none; }
+a:hover { color: var(--orange-hover); }
+:focus-visible { outline: 2px solid var(--orange); outline-offset: 3px; border-radius: 2px; }
+
+/* ---------- Header ---------- */
+
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(26, 34, 44, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 24px; min-height: 72px; flex-wrap: wrap;
+}
+
+.brand { display: flex; align-items: center; gap: 12px; color: var(--text); }
+.brand:hover { color: var(--text); }
+.brand-name { font-weight: 700; font-size: 1.25rem; letter-spacing: -0.02em; }
+.brand-name sup { font-size: 0.55em; font-weight: 600; color: var(--text-dim); margin-left: 3px; }
+
+.nav-links {
+  display: flex; align-items: center; gap: 28px; list-style: none;
+}
+.nav-links a:not(.btn) { color: var(--text); font-weight: 500; font-size: 0.95rem; }
+.nav-links a:not(.btn):hover { color: var(--orange); }
+
+.nav-toggle { display: none; }
+.nav-burger { display: none; cursor: pointer; padding: 8px; }
+.nav-burger span {
+  display: block; width: 24px; height: 2px; margin: 5px 0;
+  background: var(--text); border-radius: 2px;
+}
+
+@media (max-width: 860px) {
+  .nav-burger { display: block; }
+  .nav-links {
+    display: none; width: 100%; flex-direction: column;
+    align-items: flex-start; gap: 16px; padding: 8px 0 20px;
+  }
+  .nav-toggle:checked ~ .nav-links { display: flex; }
+}
+
+/* ---------- Buttons ---------- */
+
+.btn {
+  display: inline-block; padding: 10px 22px; border-radius: 8px;
+  font-weight: 600; font-size: 0.95rem; transition: background 0.15s ease;
+}
+.btn-solid { background: var(--orange); color: #fff; }
+.btn-solid:hover { background: var(--orange-hover); color: #fff; }
+.btn-lg { padding: 14px 30px; font-size: 1.05rem; }
+
+/* ---------- Hero ---------- */
+
+.hero {
+  position: relative;
+  background:
+    radial-gradient(1000px 500px at 85% 20%, rgba(240, 117, 29, 0.07), transparent 60%),
+    var(--bg);
+  border-bottom: 1px solid var(--line);
+  overflow: hidden;
+}
+
+.hero-grid {
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 48px; align-items: center; padding-top: 72px; padding-bottom: 80px;
+}
+
+.hero h1 {
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  font-weight: 800; letter-spacing: -0.03em; line-height: 1.1;
+}
+
+.lede {
+  margin: 22px 0 30px; max-width: 34em;
+  color: var(--text-dim); font-size: 1.1rem;
+}
+
+.chips {
+  display: flex; flex-wrap: wrap; gap: 28px 36px;
+  list-style: none; margin-bottom: 38px;
+}
+.chips li {
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  font-size: 0.85rem; font-weight: 600; color: var(--text);
+  text-align: center; max-width: 110px;
+}
+.chips svg { width: 40px; height: 40px; color: var(--orange); }
+
+.hero-art svg { display: block; width: 100%; height: auto; }
+
+@media (max-width: 860px) {
+  .hero-grid { grid-template-columns: 1fr; padding-top: 48px; padding-bottom: 56px; }
+  .hero-art { order: -1; max-width: 440px; margin: 0 auto; }
+}
+
+/* ---------- Sections ---------- */
+
+.section { padding: 88px 0; }
+.section-alt { background: var(--bg-panel); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+
+.section h2 {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 700; letter-spacing: -0.02em; margin-bottom: 12px;
+}
+
+.section-lede { color: var(--text-dim); margin-bottom: 40px; max-width: 44em; }
+.section-note { color: var(--text-dim); margin-top: 36px; font-size: 0.95rem; }
+
+.container.narrow p + p { margin-top: 18px; }
+
+.tagline {
+  margin-top: 32px !important;
+  font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase;
+  font-size: 0.95rem;
+}
+
+/* ---------- Cards ---------- */
+
+.cards {
+  display: grid; gap: 22px;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+}
+
+.card {
+  background: var(--bg-card); border: 1px solid var(--line);
+  border-radius: 12px; padding: 28px;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+.card:hover { border-color: var(--orange); transform: translateY(-2px); }
+.card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; }
+.card p { color: var(--text-dim); font-size: 0.95rem; }
+
+.section-alt .card { background: var(--bg); }
+
+/* ---------- Tags ---------- */
+
+.tags { display: flex; flex-wrap: wrap; gap: 12px; list-style: none; }
+.tags li {
+  padding: 8px 18px; border: 1px solid var(--line); border-radius: 999px;
+  background: var(--bg); font-size: 0.9rem; font-weight: 500;
+  color: var(--text);
+}
+.tags li:hover { border-color: var(--orange); }
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  border-top: 1px solid var(--line); background: var(--bg-panel);
+  padding: 40px 0;
+}
+.footer-grid {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 24px; flex-wrap: wrap;
+}
+.site-footer p { color: var(--text-dim); font-size: 0.9rem; text-align: right; }
+
+@media (max-width: 640px) {
+  .footer-grid { flex-direction: column; align-items: flex-start; }
+  .site-footer p { text-align: left; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .card:hover { transform: none; }
+}

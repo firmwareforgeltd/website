@@ -1,0 +1,36 @@
+# FirmwareForge Ltd
+
+> UK-based embedded systems consultancy delivering reliable, high-performance
+> embedded systems from firmware to full-stack applications. Tagline:
+> "Code. Hardware. Impact."
+
+FirmwareForge Ltd works at the junction of code and hardware: firmware
+development, PCB and hardware design, industrial automation, rapid
+prototyping, embedded Linux/IoT, and the full-stack software that connects
+devices to the cloud.
+
+## Services
+
+- Firmware development: bare-metal and RTOS firmware in C and C++ for STM32,
+  ESP32, AVR and RP2040 — drivers, bootloaders, OTA updates, low-power design
+- PCB & hardware design: schematic capture, layout, prototyping, bring-up,
+  design-for-manufacture (KiCad)
+- Industrial automation: Modbus, CAN bus, RS-485 integration, sensor
+  networks, data logging, operator interfaces
+- Rapid prototyping: Arduino and Raspberry Pi proof-of-concept builds with a
+  path to production
+- Embedded Linux & IoT: Raspberry Pi and embedded Linux systems, MQTT/REST
+  connectivity, secure deployments
+- Full-stack integration: dashboards, APIs and tooling around device data
+
+## Key technologies
+
+C, C++, Python, STM32, ESP32, Arduino, Raspberry Pi, RP2040, FreeRTOS,
+Embedded Linux, KiCad, Modbus, CAN bus, RS-485, MQTT, Bluetooth LE, LoRa
+
+## Contact
+
+- Email: m@firmwareforge.co.uk
+- Website: https://firmwareforge.co.uk/
+- GitHub: https://github.com/firmwareforgeltd
+- Location: United Kingdom
