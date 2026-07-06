@@ -36,19 +36,6 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 
-      - name: Ensure custom domain is set
-        run: |
-          current=$(curl -sf \
-            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-            -H "Accept: application/vnd.github+json" \
-            "https://api.github.com/repos/${{ github.repository }}/pages" | jq -r '.cname // empty')
-          if [ "$current" != "firmwareforge.co.uk" ]; then
-            curl -sf -X PUT \
-              -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-              -H "Accept: application/vnd.github+json" \
-              "https://api.github.com/repos/${{ github.repository }}/pages" \
-              -d '{"cname":"firmwareforge.co.uk"}'
-            echo "Custom domain set to firmwareforge.co.uk"
-          else
-            echo "Custom domain already set"
-          fi
+      # Custom domain (firmwareforge.co.uk) is configured in the repo's
+      # Pages settings — it can't be set here because GITHUB_TOKEN lacks
+      # the admin permission the Pages update API requires.
